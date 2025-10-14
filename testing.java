@@ -2,12 +2,11 @@
 public class testing {
 
     public static void main(String[] args) {
-        int i = 0;
 
-        while (i <= 5) {
-            System.out.println(i);
-            i++;
-        }
+        char c1 = 'b';
+        char c2 = 'd';
+
+        int n = c1 + c2; //
+        System.out.println((int) c2);
     }
-
 }

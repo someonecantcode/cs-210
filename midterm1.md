@@ -157,10 +157,13 @@ System.out.printf("my teacher is %s", "taesik kim");
 char c1 = 'b';
 char c2 = 'd';
 
+int n = c1 + c2; // 98 + 100 = 198
 boolean test = (c1 == c2); // false
 
 for(char c ='a'; c<='f'; c++){
     System.out.println(c + " " + (1+c));
+    // a 98
+    // b 99
 }
 ```
 
