@@ -1,0 +1,6 @@
+John m 18
+William m 22
+Susan f 21
+Jack m 19
+Jennifer f 18
+Sophia f 20
