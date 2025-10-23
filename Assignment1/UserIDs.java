@@ -2,7 +2,7 @@
  * Name: Brendan Tea
  * Email: brendan.tea@bellevuecollege.edu
  * Date: October 31st, 2025
- * Description: Reads file data and . . .
+ * Description: Reads file data and allows users to add their user.
  * 
  */
 
@@ -61,7 +61,7 @@ public class UserIDs {
         return dataList;
     }
 
-    // Updates file with new data.
+    // Updates file with new data and checks if it was written.
     public static void writeData(File file, ArrayList<String> data) throws FileNotFoundException {
         PrintStream out = new PrintStream(MAIN_FILE);
         for (String s : data) {
