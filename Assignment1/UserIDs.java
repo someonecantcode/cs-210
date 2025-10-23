@@ -42,14 +42,12 @@ public class UserIDs {
         } while (!metReqs(dataList, input));
         s.close();
 
-        System.out.println(input + " created successfully! \n");
+     
         dataList.add(input);
-
         writeData(MAIN_FILE, dataList);
         listIds(MAIN_FILE);
     }
 
-    
     // Reads data and loads them into an arrayList.
     public static ArrayList<String> parseData(File file) throws FileNotFoundException {
         ArrayList<String> dataList = new ArrayList<>();
@@ -70,6 +68,15 @@ public class UserIDs {
             out.println(s);
         }
         out.close();
+
+        // Checks data was written into database by checking if exists
+        // could just use assert()
+
+        if(!uniqueId(data, data.get(data.size()-1))) {
+            System.out.printf("%s created successfully! %n", data.get(data.size()-1));
+        } else{
+            System.out.printf("ERROR");
+        }
     }
 
     // Reads file data and outputs in console
@@ -153,12 +160,9 @@ public class UserIDs {
         boolean lower = false;
 
         for (int i = 0; i < input.length(); i++) {
-            if (Character.isUpperCase(input.charAt(i))) {
-                upper = true;
-            } else if (Character.isLowerCase(input.charAt(i))) {
-                lower = true;
-            }
-
+            upper = upper || Character.isUpperCase(input.charAt(i));
+            lower = lower || Character.isLowerCase(input.charAt(i));
+    
             if (upper && lower) {
                 return true;
             }
