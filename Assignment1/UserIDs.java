@@ -13,8 +13,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 // gpt is not god -taesik kim
-public class UserId {
+public class UserIDs {
 
+    // Final variables that affect behavior across the program.
     static final int MIN_LENGTH = 5;
     static final int MAX_LENGTH = 11;
     static final File MAIN_FILE = new File("IDs.txt");
@@ -28,6 +29,7 @@ public class UserId {
         " must end with a special character. \n"
     };
 
+    // Main method takes input from user and adds it to the file.
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<String> dataList = parseData(MAIN_FILE);
         listIds(MAIN_FILE);
@@ -47,6 +49,8 @@ public class UserId {
         listIds(MAIN_FILE);
     }
 
+    
+    // Reads data and loads them into an arrayList.
     public static ArrayList<String> parseData(File file) throws FileNotFoundException {
         ArrayList<String> dataList = new ArrayList<>();
         Scanner sFile = new Scanner(file);
@@ -59,6 +63,7 @@ public class UserId {
         return dataList;
     }
 
+    // Updates file with new data.
     public static void writeData(File file, ArrayList<String> data) throws FileNotFoundException {
         PrintStream out = new PrintStream(MAIN_FILE);
         for (String s : data) {
@@ -67,6 +72,7 @@ public class UserId {
         out.close();
     }
 
+    // Reads file data and outputs in console
     public static void listIds(File file) throws FileNotFoundException {
         Scanner sFile = new Scanner(file);
         String output = "";
@@ -80,6 +86,7 @@ public class UserId {
         System.out.println(output);
     }
 
+    // Main checker function using all 7 requirements.
     public static boolean metReqs(ArrayList<String> list, String input) {
 
         String errorMessage = "";
@@ -100,18 +107,11 @@ public class UserId {
                 errorMessage += input + ERROR_LIST[i];
             }
         }
-
-        // errorMessage += uniqueId(list, input) ? "" : (input + ERROR_LIST[0]) ;
-        // errorMessage += inRange(input) ? "" : (input + ERROR_LIST[1]) ;
-        // errorMessage += oneNumber(input) ? "" : (input + ERROR_LIST[2]) ;
-        // errorMessage += twospecialChars(input) ? "" : (input + ERROR_LIST[3]) ;
-        // errorMessage += upperandlower(input) ? "" : (input + ERROR_LIST[4]) ;
-        // errorMessage += endSpecialchar(input) ? "" : (input + ERROR_LIST[5]) ;
         System.out.println(errorMessage);
         return (errorMessage.length() == 0);
     }
 
-    // O(n) lookup time
+    // O(n) lookup time. Checks every value and checks if it collides with the input.
     public static boolean uniqueId(ArrayList<String> list, String id) {
         for (String ids : list) {
             if (ids.equals(id)) {
@@ -121,10 +121,12 @@ public class UserId {
         return true;
     }
 
+    // O(1) Checks if input is within the range [MIN_LENGTH, MAX_LENGTH]
     public static boolean inRange(String input) {
         return (input.length() >= MIN_LENGTH && input.length() <= MAX_LENGTH);
     }
 
+    // O(n) Checks if input has 1 number and exits immediately if found.
     public static boolean oneNumber(String input) {
         for (int i = 0; i < input.length(); i++) {
             if (Character.isDigit(input.charAt(i))) {
@@ -134,6 +136,7 @@ public class UserId {
         return false;
     }
 
+    // O(n) Counts ammount of special chars and checks if greater or equal to 2.
     public static boolean twospecialChars(String input) {
         int count = 0;
         for (int i = 0; i < input.length(); i++) {
@@ -144,6 +147,7 @@ public class UserId {
         return count >= 2;
     }
 
+    // O(n) Checks for both upper & lower by keeping check of both conditions.
     public static boolean upperandlower(String input) {
         boolean upper = false;
         boolean lower = false;
@@ -151,8 +155,7 @@ public class UserId {
         for (int i = 0; i < input.length(); i++) {
             if (Character.isUpperCase(input.charAt(i))) {
                 upper = true;
-            }
-            if (Character.isLowerCase(input.charAt(i))) {
+            } else if (Character.isLowerCase(input.charAt(i))) {
                 lower = true;
             }
 
@@ -164,6 +167,7 @@ public class UserId {
 
     }
 
+    // O(1) Checks last char index and checks if it is special char.
     public static boolean endSpecialchar(String input) {
         return !Character.isLetterOrDigit(input.charAt(input.length() - 1));
     }

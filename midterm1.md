@@ -43,15 +43,14 @@ System.out.println(i+1); // 2
 
 ```
 
-
+<div style="page-break-after: always;"></div>
 
 ### Methods
-
 ```java
-
 // public or private
 // static (accessible)
 // return type
+// MUST ALWAYS HAVE RETURN OUTPUT FOR ALL PATHS
 public static int adder(int a, int b){
     return a+b;
 }
@@ -59,7 +58,6 @@ public static int adder(int a, int b){
 ```
 
 ### For Loops
-
 ```java
 // Starts at 0 and ends at 5
 // 0 1 2 3 4 5 (loops 6 times)
@@ -78,7 +76,6 @@ for(int i = 1; i<=5; i++) {
 ```
 
 ### While and Do While Loops
-
 ```java
 // checks condition at the start
 while (condition) {
@@ -92,10 +89,10 @@ do {
 
 ```
 
+<div style="page-break-after: always;"></div>
+
 ### if statement
-
 ```java
-
 //Ternary
 (condition) ? true_statement : false_statement;
 
@@ -111,7 +108,6 @@ if(condition){
 ## Specifics
 
 ### Strings
-
 ```java
 // String var_name = "StringName";
 String s = "Hello World"
@@ -133,9 +129,13 @@ s.charAt(0) // H
 | `String.endsWith(str)`              |     `boolean`       |
 | `String.contains(str)`              |     `boolean`       |
 
-### System.out.printf
 
+
+<div style="page-break-after: always;"></div>
+
+### System.out.printf
 ```java
+//default right align
 System.out.printf(string, params);
 System.out.printf("my teacher is %s", "taesik kim");
 ```
@@ -148,9 +148,10 @@ System.out.printf("my teacher is %s", "taesik kim");
 |`%s`| `String` |
 |`%d`| `int` |
 |`%f`| `float` |
+|`%%` | % symbol |
+|`%-6.1f` | example left align 6 chars wide 1 decimal. |
 
 ### Chars
-
 ```java
 // A - 65 / Z - 90
 // a - 97 / z - 122 
@@ -166,6 +167,7 @@ for(char c ='a'; c<='f'; c++){
     // b 99
 }
 ```
+<div style="page-break-after: always;"></div>
 
 ### Random
 
@@ -183,6 +185,7 @@ public static int randomIntRange(int min, int max) {
 | ---------- | ------ |
 | `r.nextInt(max)` | `int` [0, max) |
 |`r.nextDouble()`| `double` [0.0, 1.0)|
+
 
 ### Scanners
 
@@ -207,6 +210,8 @@ s.close();
 | `s.hasNextInt()` |     `boolean`   |
 | `s.hasNextDouble()` |     `boolean` (can take int)  |
 
+<div style="page-break-after: always;"></div>
+
 ### File Input/Output
 
 ```java
@@ -230,6 +235,13 @@ public static void main(String[] args) throws FileNotFoundException {
     out.close();
 } 
 ```
+| Methods        | Return    |
+| -------------- | --------- |
+| `PrintStream.close()` | `void`|
+| `PrintStream.println(output)` | `void`|
+
+
+<div style="page-break-after: always;"></div>
 
 ### Arrays
 
@@ -254,13 +266,12 @@ for(int n : numbers) {
 | -------------- | --------- |
 | `array.length` | int       |
 | `array[index]` | arrayType |
-| `array.length` | int       |
 
 > Import java.util.Arrays
 
 | Methods                             | Return               |
 | ----------------------------------- | -------------------- |
-| `Arrays.binearySearch(array,value)` |                      |
+| `Arrays.binarySearch(array,value)` |                      |
 | `Arrays.copyOf(array, length)`     |                      |
 | `Arrays.equals(array1, array2)`     | boolean (same order) |
 | `Array.fill(array, value)`          | array                |

@@ -1,0 +1,6 @@
+John 70 60
+William 45 88
+Chloe 65 70
+Jack 39 50
+Jenny 75 45
+Sophia 90 85
