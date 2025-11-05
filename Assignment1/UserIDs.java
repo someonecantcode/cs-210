@@ -21,12 +21,12 @@ public class UserIDs {
     static final File MAIN_FILE = new File("IDs.txt");
 
     static final String[] ERROR_LIST = {
-        " is already in use. \n",
-        " must be between " + MIN_LENGTH + " and " + MAX_LENGTH + ".\n",
-        " must have at least one number. \n",
-        " must have at least two special characters. \n",
-        " must have lower-case and upper-case. \n",
-        " must end with a special character. \n"
+            " is already in use. \n",
+            " must be between " + MIN_LENGTH + " and " + MAX_LENGTH + ".\n",
+            " must have at least one number. \n",
+            " must have at least two special characters. \n",
+            " must have lower-case and upper-case. \n",
+            " must end with a special character. \n"
     };
 
     // Main method takes input from user and adds it to the file.
@@ -42,7 +42,6 @@ public class UserIDs {
         } while (!metReqs(dataList, input));
         s.close();
 
-     
         dataList.add(input);
         writeData(MAIN_FILE, dataList);
         listIds(MAIN_FILE);
@@ -72,9 +71,9 @@ public class UserIDs {
         // Checks data was written into database by checking if exists
         // could just use assert()
 
-        if(!uniqueId(data, data.get(data.size()-1))) {
-            System.out.printf("%s created successfully! %n", data.get(data.size()-1));
-        } else{
+        if (!uniqueId(data, data.get(data.size() - 1))) {
+            System.out.printf("%s created successfully! %n", data.get(data.size() - 1));
+        } else {
             System.out.printf("ERROR");
         }
     }
@@ -98,15 +97,16 @@ public class UserIDs {
 
         String errorMessage = "";
 
-        // a little redudant and confusing. In the future, error_list & checks should be combined since elements 
+        // a little redudant and confusing. In the future, error_list & checks should be
+        // combined since elements
         // are in the same element.
         boolean[] checks = {
-            uniqueId(list, input),
-            inRange(input),
-            oneNumber(input),
-            twospecialChars(input),
-            upperandlower(input),
-            endSpecialchar(input)
+                uniqueId(list, input),
+                inRange(input),
+                oneNumber(input),
+                twospecialChars(input),
+                upperandlower(input),
+                endSpecialchar(input),
         };
 
         for (int i = 0; i < checks.length; i++) {
@@ -118,7 +118,8 @@ public class UserIDs {
         return (errorMessage.length() == 0);
     }
 
-    // O(n) lookup time. Checks every value and checks if it collides with the input.
+    // O(n) lookup time. Checks every value and checks if it collides with the
+    // input.
     public static boolean uniqueId(ArrayList<String> list, String id) {
         for (String ids : list) {
             if (ids.equals(id)) {
@@ -150,6 +151,7 @@ public class UserIDs {
             if (!Character.isLetterOrDigit(input.charAt(i))) {
                 count++;
             }
+
         }
         return count >= 2;
     }
@@ -162,7 +164,7 @@ public class UserIDs {
         for (int i = 0; i < input.length(); i++) {
             upper = upper || Character.isUpperCase(input.charAt(i));
             lower = lower || Character.isLowerCase(input.charAt(i));
-    
+
             if (upper && lower) {
                 return true;
             }

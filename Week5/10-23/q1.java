@@ -1,0 +1,17 @@
+/*
+ * Name: Brendan Tea
+ * Date: October 3rd, 2025
+ * Description: Prints out left and right aligned float
+ * 
+ */
+
+
+public class q1 {
+    public static void main(String[] args) {
+        Area myObject = new Area();
+        double a = myObject.rectArea(1, 2);
+        double b = myObject.triArea(2, 4);
+
+        System.out.print(a);
+    }
+}
