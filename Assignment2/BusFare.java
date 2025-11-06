@@ -1,9 +1,19 @@
+/*
+ * Name: Brendan Tea
+ * Date: November 11, 2025
+ * Description: Main super class containing our structure and fields
+ * 
+ */
+
+
 public abstract class BusFare {
     private static double baseRate = 5.0;
     private static String color = "Red";
     
+    // Abstract method since each subclass handles it differently
     public abstract double getFare();
 
+    // encapsulated accessor getter methods
     public double getBaseRate() {
         return BusFare.baseRate;
     }
