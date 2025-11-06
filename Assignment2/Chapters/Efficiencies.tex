@@ -1,0 +1,56 @@
+\section{Efficiencies}
+
+When we first were programming this assignment, it was important for it to follow a specific structure with 
+super classes and subclasses inheriting methods. This would allow us to reuse code and override them to create our
+own behaviors and additions. In the end, we are able to create instances and run their methods for our purposes: specifically 
+looking at \texttt{Chloe (Adult)}, \texttt{Ted (Senior)}, \texttt{Ed (SuperSenior)} fares. This is the whole idea of the OOP paradigm, allowing
+us to extend our code for many different purposes. 
+
+\begin{figure}[H]
+        \frame{\includegraphics[width=0.8\textwidth,height=0.8\textheight,keepaspectratio]{Inheritance.png}}
+        \caption[short]{Inheritance Structure }
+\end{figure}
+
+\subsection{myBusFare}
+
+In the end, this is how how our main myBusFare.java performs.  We can simply create our instances and run its output method.
+This makes our code extremely simply with abstractions. Additionally, in the future, if anyone creates instances,
+we can update the value of our baseRate and it will cascade and be updated.
+
+\lstinputlisting[language=Java]{myBusFare.java}
+
+\subsection{BusFare}
+Let's take a look at the super class BusFare.java and uncover how it is efficient. In this
+code snippet, we can encapsulate our class fields \texttt{baseRate} and \texttt{color} with our getter methods. All 
+of these methods provide a structure for of all subclasses to inherit. The most efficient
+part of the code is the \texttt{fare(String name)} method as allows us to just write one singular method 
+to output our instance data since subclasses have their own overriden methods.
+\ \\
+\lstinputlisting[language=Java]{BusFare.java}
+
+\newpage
+\subsection{Adult}
+This \texttt{Adult} subclass inherits all of the super methods such as \texttt{getBaseRate()} and \texttt{getColor()}. We
+can overrides these methods, \texttt{getFare()} \& \texttt{getColor()}, with our own class behavior.
+ \texttt{getColor()} again is basically one-to-one because color is static to the class. 
+\ |\
+\lstinputlisting[language=Java]{Adult.java}
+
+\ \\
+\subsection{Senior}
+This \texttt{Senior} subclass is basically the same as Adult and inherits all of the super methods such as \texttt{getBaseRate()} and \texttt{getColor()}. We
+can overrides these methods, \texttt{getFare()} \& \texttt{getColor()}, with our own class behavior. 
+\texttt{getColor()} again is basically one-to-one because color is static to the class. 
+\ \\
+\lstinputlisting[language=Java]{Senior.java}
+
+\newpage
+\subsection{SuperSenior}
+This \texttt{SuperSenior} subclass extends \texttt{Senior} and inherits all of the super methods such as \texttt{getBaseRate()} and \texttt{getColor()}. We
+can overrides these methods, \texttt{getFare()} \& \texttt{getColor()}, with our own class behavior. Something special now is the way we can
+calculate our \texttt{getFare}. Instead of grabbing \texttt{BusFare} base rate and applying a discount, we can instead just take 50\% of the
+\texttt{Senior} fare cost. \texttt{getColor()} again is basically one-to-one because color is static to the class. 
+
+\lstinputlisting[language=Java]{SuperSenior.java}
+
+

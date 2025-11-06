@@ -13,6 +13,15 @@ class person{
         this.name = name;
         this.age = age;
     }
+
+    public person(String string, BusFare senior) {
+        //TODO Auto-generated constructor stub
+    }
+
+    public void output() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'output'");
+    }
 }
 
 // BE ABLE TO EXPLAIN WHY SOMETHING IS INEFFICIENT LOGICALLY

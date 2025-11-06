@@ -1,6 +1,6 @@
 public class SuperSenior extends Senior {
     private static double discount = 0.5;
-    private static String color = "white";
+    private static String color = "White";
 
     @Override
     public double getFare() {

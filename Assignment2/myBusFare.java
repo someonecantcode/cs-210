@@ -5,31 +5,19 @@
  * 
  */
 
-class person {
-    String name;
-    BusFare type;
-
-    person(String name, BusFare type){
-        this.name = name;
-        this.type = type;
-    }
-}
-
 public class myBusFare {
+
     public static void main(String[] args) {
         // Senior Ted = new Senior();
         // SuperSenior Ed = new SuperSenior();
         // Adult Chloe = new Adult();
 
-        person[] persons = {
-            new person("Ted", new Senior()),
-            new person("Ed", new SuperSenior()),
-            new person("Chloe", new Adult())
-        };
+        persons p = new persons();
+        p.add(new person("Ted", new Senior()));
+        p.add(new person("Chloe", new Adult()));
+        p.add(new person("Ed", new SuperSenior()));
 
-        for(person p : persons){
-            p.type.fare(p.name);
-        }
+        p.output();
 
     }
 }

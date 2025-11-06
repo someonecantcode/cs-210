@@ -1,6 +1,6 @@
 public class Adult extends BusFare {
     private static double discount = 1.0;
-    private static String color = "Grey";
+    private static String color = "Red";
 
     @Override
     public double getFare() {

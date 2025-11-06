@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx, float} % Required for inserting images
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[left=1in, right=1in, top=0.5in, bottom=1in]{geometry}
+\usepackage{caption, booktabs, subcaption}
+
+\graphicspath{{./Images}}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+%-------------------------------
+\title{ Assignment 2 Explanation}
+\author{ Brendan Tea }
+\date{\today}
+%----------------------------
+\begin{document}
+\maketitle	
+
+% Optional TOC
+
+
+\begin{abstract}
+This is an explanation of my code, design choices, and how it's implementation is efficient. Additionally, 
+we will also discuss potential future features and classes for new behaviors. 
+\end{abstract}
+
+\tableofcontents
+\ \\
+\ \\
+\ \\
+\ \\
+\ \\
+\ \\
+\ \\
+\ \\
+
+\begin{figure}[H]
+        \centering
+        \frame{\includegraphics[width=0.25\textwidth,height=0.25\textheight,keepaspectratio]{CS210.png}}
+        \caption[short]{CS 210 \#26175 - Professor Taesik Kim}
+\end{figure}
+%--Paper-- 
+\include{Chapters/Efficiencies}
+\include{Chapters/Future}
+\include{Chapters/Conclusion}
+
+
+
+\pagebreak
+
+
+
+
+\end{document}

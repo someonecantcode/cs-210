@@ -1,0 +1,37 @@
+\section{Future potentials}
+
+\subsection{myBusFare improvements}
+Usually without creating specific person struct for the with names and their specific BusFare, you'll get something like this.
+It's dry and honestly redundant. It would be better if we could have an array. This is the bare minimum solution.
+
+\lstinputlisting[language=Java]{Chapters/v1myBusFare.java}
+\ \\
+This is what we get but with two arrays with same elements correlating to the same object, you can see some improvement.
+Later on you can improve upon this but creating a struct. 
+
+\lstinputlisting[language=Java]{Chapters/v2myBusFare.java}
+
+Afterwards, you can should instead make the person a seperate file.
+
+
+\lstinputlisting[language=Java]{Chapters/v3myBusFare.java}
+
+This is where we arrive upon with extending classes. 
+\begin{figure}[H]
+        \frame{\includegraphics[width=1\textwidth,height=1\textheight,keepaspectratio]{Objects.png}}
+        \caption[short]{Inheritance Structure with new object types}
+\end{figure}
+
+
+\subsection{persons}
+This \texttt{persons} class utilizes ArrayList so that people in the future can easily add more passengers. This class
+gives us the ability to clearly see who our people and basically have full control. 
+
+\lstinputlisting[language=Java]{persons.java}
+
+\subsection{person}
+This \texttt{person} class handles behavior for individual people to accodomoate for their \texttt{name} and \texttt{BusFare} type.
+It uses runtime polymorphism so that we can call the output() method in every \texttt{BusFare} object which makes it very
+efficient. It's almost like a struct, providing us with framework of fields and methods to display.
+
+\lstinputlisting[language=Java]{person.java}
