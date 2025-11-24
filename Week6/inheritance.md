@@ -7,7 +7,7 @@ Two ways to use someone else's program
 
 ### Superclass
 
-* a
+* A larger class with super variables and methods.
 
 ### Subclass
 

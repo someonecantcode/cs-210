@@ -1,5 +1,7 @@
 import java.io.FileNotFoundException;
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 class person {
     String name;
@@ -11,39 +13,36 @@ class person {
         this.MathScore = mathinput;
         this.PhysicsScore = physicinput;
     }
-    
-}
-
-class Parent {
-    public double getPay() { return 0; }
-}
-
-class Child extends Parent {
-    private static int bonus = 100;
-
     @Override
-    public double getPay() {
-        return (super.getPay() + Child.bonus);
+    public String toString() {
+        return String.format(
+            "Name: %s %nMathScore: %d %nPhysicsScore: %d %n",
+            this.name,
+            this.MathScore,
+            this.PhysicsScore
+        );
     }
+
 }
 
 public class testing {
 
     public static void main(String[] args) throws FileNotFoundException {
-        double[] a = new double[5];
-        a[1] = 6.5;
-        a[4] = -4.5;
+       ArrayList < Integer > al = new ArrayList < Integer > ();
+        HashSet < Integer > hs = new HashSet < Integer > ();
+        HashMap < Integer, Integer > hm = new HashMap< Integer, Integer > ();
+        for (int i = 0; i < 2; i++) {
+            al.add(i++);
+            hs.add(i);
+            hm.put(i--, al.get(i));
+        }
+        System.out.println(al);
+        System.out.println(hs);
+        System.out.println(hm);
 
-        double[] b = a;
-        b[1] = 2;
-        b[4] = 3;
-
-        System.out.println(Arrays.toString(a));
-        System.out.println(Arrays.toString(b));
-
-        // should i start ai from beginning
-        // already can find so many similair programs in the world and import
     }
-
+    public static void printing(int v, int anotherone) {
+        System.out.print(v);
+        System.out.println(anotherone);
+    }
 }
-
