@@ -2,15 +2,15 @@
 // why index starts at 0? then it is not as simple as just simple as index*8. its (index -1)
 // you don't want to have -1 constantly being calculated.
 
-public class LinkedList<T> {
+public class LinkedListTEST<T> {
     // head and next
     Node<T> head;
 
-    public LinkedList() {
+    public LinkedListTEST() {
         head = new Node<T>();
     }
 
-    public LinkedList(T data) {
+    public LinkedListTEST(T data) {
         head = new Node<T>(data);
     }
 
