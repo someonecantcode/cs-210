@@ -8,7 +8,7 @@
 public class lockin1 {
     // This main method is to initialize variables and run the method
     public static void main(String[] args) {
-        Double b = 3.0;
+        Double b = 300.0;
         Double h = 5.0;
 
         AreaTriangle(b, h);
@@ -16,6 +16,7 @@ public class lockin1 {
 
     // This method is output area of triangle
     public static void AreaTriangle(Double base, Double height) {
+        System.out.println(base);
         System.out.printf("Area of triangle (base=%2.1f, height=%2.1f) is %2.1f", base, height, 0.5 * base * height);
     }
 }

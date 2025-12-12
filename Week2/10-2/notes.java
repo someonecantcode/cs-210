@@ -20,11 +20,11 @@ public class notes {
 
         out.close();
 
-        //System.out.print(oddeven(new Scanner(System.in).nextInt()));
+        System.out.print(oddeven(new Scanner(System.in).nextInt()));
     }
     public static String oddeven(int input) {
-switch (input) {
- case 1:
+        switch (input) {
+                case 1:
                 return "odd"; case 2:
                 return "even"; case 3:
                 return "odd"; case 4:
@@ -4675,4 +4675,9 @@ switch (input) {
                 return "even"; case 4649:
                 return "odd"; case 4650:
                 return "even"; case 4651:
-             
+                return "odd";
+                default:
+                return "out of range";
+        }
+    }
+} 

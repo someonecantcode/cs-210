@@ -12,6 +12,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 // gpt is not god -taesik kim
 public class UserIDs {
 

@@ -135,6 +135,21 @@ if(condition){
 
 ```
 
+### Switch Case
+
+```java
+//no need for type in parameter
+switch(input) {
+    case "idk":
+        return "hmm"
+    case "do nothing":
+        break;
+    default:
+        break;
+}
+
+```
+
 ## Specifics
 
 ### Strings
@@ -571,7 +586,7 @@ public class PrivateTest {
 ```
 
 
-# Inheritance & Interfaces
+# Inheritance
 
 Two ways to use someone else's program
 
@@ -926,7 +941,7 @@ numbers.get(0); // index 0 is 1;
 | `myArrayList.indexOf(value)`          | int index            |
 | `myArrayList.size()`                | int                |
 | `myArrayList.sort()`            | void
-| `myArrayList.remove(int index)`            | `boolean`            |
+| `myArrayList.remove(int index)`            | `E`            |
 | `myArrayList.remove(Object o)`            | `boolean`removes first index that there is an object. does not remove duplicates|
 
 ## LinkedList
@@ -1056,9 +1071,11 @@ Symmetric Difference  $$A \Delta B = \{1,2,3,4\} $$
 
 ```java
 HashSet<Type> middle = Intersect(A,B);
-HashSet<Type> cloneA = 
+HashSet<Type> cloneA = new HashSet<Type>(A);
 
-Symmetric Difference = ()
+cloneA.addAll(B);
+
+Symmetric Difference = (cloneA.removeAll(middle))
 
 ```
 

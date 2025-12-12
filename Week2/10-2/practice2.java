@@ -1,5 +1,19 @@
 import java.util.Scanner;
 
+class errorCheckStruct{
+    boolean checker;
+    String error_message;
+
+    errorCheckStruct(boolean checker, String error_message){
+        this.checker = checker;
+        this.error_message = error_message;
+    }   
+
+    public void print(){
+        System.out.printf(error_message, practice2.maxLength, practice2.mixLength);
+    }
+}
+
 public class practice2 {
     public static int minLength, maxLength;
 
@@ -17,15 +31,27 @@ public class practice2 {
             id = s.next();
         }
 
-        System.out.println("USAU has been successfully created!");
+        System.out.println(id + " has been successfully created!");
         s.close();
     }
 
     public static Boolean metReqs(String id) {
         Boolean output = true;
 
-        if (id.equals("")) {
+         if (isEmpty(id)) {
             return false;
+        }
+
+        errorCheckStruct[] checkers = {
+            new errorCheckStruct(isInRange(id), "ID must be greater than or equal to %d and less than or equal to %d %n")
+        };
+
+       
+        for(int i=0; checkers.length; i++){
+            boolean yay = checkers[i].checker;
+            if(!output) {
+                checkers[i].print();
+            }
         }
 
         if (id.length() < minLength || id.length() > maxLength) {
@@ -41,6 +67,13 @@ public class practice2 {
         }
 
         return output;
+    }
+
+    public static boolean isEmpty(String id){
+        return id.length() == 0;
+    }
+    public static Boolean isInRange(String id) {
+        return (id.length() >= minLength && id.length() <= maxLength);
     }
 
 }
